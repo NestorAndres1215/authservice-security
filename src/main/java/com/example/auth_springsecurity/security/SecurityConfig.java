@@ -42,7 +42,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
-                .httpBasic(httpBasic -> {}); // Login por REST básico
+                .httpBasic(httpBasic -> {});
 
         return http.build();
     }

@@ -21,7 +21,6 @@ public class AuthController {
     private final AuthService authService;
     private final AuthenticationManager authenticationManager;
 
-    // Registro
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
         Usuario usuario = authService.registerUser(
@@ -32,7 +31,6 @@ public class AuthController {
         return ResponseEntity.ok("Usuario registrado: " + usuario.getUsername());
     }
 
-    // Login
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
